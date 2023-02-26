@@ -15,17 +15,22 @@ public class GameManager : MonoBehaviour
     
     public GameObject titleScreen;
     public Text gaOvText;
+    private SaveManager saveManager;
 
     public Button restartButton;
     public Button button;
     public Button pauseBut;
     public Button playBut;
-    
+    public Button exitButton;
 
     void Start()
     {
         button = GameObject.Find("StartButton").GetComponent<Button>();
         button.onClick.AddListener(StartGame);
+
+        saveManager = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+        exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
+        exitButton.onClick.AddListener(saveManager.Exit);
     }
 
     void Update()
