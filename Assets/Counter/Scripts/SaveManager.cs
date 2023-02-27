@@ -19,15 +19,14 @@ public class SaveManager : MonoBehaviour
     public string bigname;
     public int highscore;
 
-    public Button exitButton;
+    
 
 
     void Start()
     {
         Count = 0;
         counterScript = GameObject.Find("Catcher").GetComponent<Counter>();
-        exitButton = GameObject.Find("ExitButton").GetComponent<Button>();
-        exitButton.onClick.AddListener(Exit);
+        
     }
 
     private void Awake()
